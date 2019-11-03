@@ -1,0 +1,29 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: poptape/messages/api:v0.1
+    ports:
+      - "1900:8090"
+    restart: always
+    depends_on:
+      - db
+    networks:
+      - net_poptape
+  db:
+    image: 
+    restart: always
+    ports:
+      - "1901:27017"
+    volumes:
+      - poptape_messages_data:/data/db
+    networks:
+      - net_poptape
+networks:
+  net_poptape:
+    external: true
+volumes:
+  poptape_messages_data:
+  
