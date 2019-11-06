@@ -16,14 +16,16 @@ type App struct {
 	Router *mux.Router
 	Mongo  *mongo.Client
     NotificationURI string
+    MailURI string
     DocumentLimit int64
 }
 
-func (a *App) Initialize(connectionString, NotificationURI, DocumentLimit string) {
+func (a *App) Initialize(connectionString, NotificationURI, MailURI, DocumentLimit string) {
 
 	a.Router = mux.NewRouter()
 	a.initializeRoutes()
     a.NotificationURI = NotificationURI
+    a.MailURI = MailURI
     var err error
     var iLimit int64
 

@@ -9,11 +9,11 @@ services:
       - "1900:8090"
     restart: always
     depends_on:
-      - db
+      - mongo_db
     networks:
       - net_poptape
-  db:
-    image: 
+  mongo_db:
+    image: mongo:3.6
     restart: always
     ports:
       - "1901:27017"
