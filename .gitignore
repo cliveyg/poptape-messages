@@ -9,7 +9,7 @@
 !.env.example
 !.gitignore
 !app.go
-!messages.go
+!message.go
 !bouncer.go
 !handlers.go
 !misc.go
