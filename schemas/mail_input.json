@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Mail schema",
+  "type": "object",
+  "properties": {
+    "auction_id": {"type": "string", "format": "uuid"},
+    "message_id": {"type": "string", "format": "uuid"},
+    "prev_message_id": {"type": "string", "format": "uuid"},
+    "public_id": {"type": "string", "format": "uuid"},
+    "from_id": {"type": "string", "format": "uuid"},
+    "lot_id": {"type": "string", "format": "uuid"},
+    "item_id": {"type": "string", "format": "uuid"},
+    "purchase_id": {"type": "string", "format": "uuid"},
+    "message_status": {"type": "string", "minLength": 2, "maxLength": 20},
+    "priority": {"type": "integer", "minimum": 0, "maximum": 5},
+    "deleted": {"type": "boolean"},
+    "delete_date": {"type": "string", "format": "date-time"},
+    "read": {"type": "boolean"},
+    "read_date": {"type": "string", "format": "date-time"},
+    "created": {"type": "string", "format": "date-time"},
+    "message": {"type": "string", "minLength": 0, "maxLength": 500},
+    "type": {"type": "integer", "minimum": 0, "maximum": 5},
+    "subject": {"type": "string", "minLength": 0, "maxLength": 50},
+    "starred": {"type": "boolean"}
+  },
+  "additionalProperties": false,
+  "required": ["from_id", "message_status", "priority",
+               "message", "type", "subject"]
+}
