@@ -9,10 +9,14 @@
 !.env.example
 !.gitignore
 !app.go
-!messages.go
+!message.go
 !bouncer.go
 !handlers.go
 !misc.go
 !routes.go
 !models.go
 !api_test.go
+!schemas/
+!schemas/mail_input.json
+!schemas/notification_input.json
+!schemas/test_input.json
