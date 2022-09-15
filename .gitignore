@@ -9,7 +9,6 @@
 !.env.example
 !.gitignore
 !app.go
-!message.go
 !bouncer.go
 !handlers.go
 !misc.go
@@ -22,3 +21,4 @@
 !schemas/test_input.json
 !go.mod
 !go.sum
+!messages.go
