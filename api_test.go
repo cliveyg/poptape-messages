@@ -60,13 +60,13 @@ func checkResponseCode(t *testing.T, expected, actual int) bool {
 }
 
 func clearTable() {
-	a.DB.Exec("DELETE FROM reviews")
+	//a.DB.Exec("DELETE FROM reviews")
 }
 
 func runSQL(sqltext string) {
-	if _, err := a.DB.Exec(sqltext); err != nil {
+	/*if _, err := a.DB.Exec(sqltext); err != nil {
 		log.Fatal(err)
-	}
+	}*/
 }
 
 const dropTable = `DROP TABLE IF EXISTS reviews`
