@@ -20,3 +20,5 @@
 !schemas/mail_input.json
 !schemas/notification_input.json
 !schemas/test_input.json
+!go.mod
+!go.sum
