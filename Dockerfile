@@ -10,7 +10,7 @@ WORKDIR /app
 
 # remove any go module files and get deps
 RUN rm -f go.mod go.sum
-RUN go mod init github.com/cliveyg/poptqpe-messages
+RUN go mod init github.com/cliveyg/poptape-messages
 RUN go mod tidy
 RUN go mod download
 
