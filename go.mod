@@ -1,4 +1,4 @@
-module github.com/cliveyg/poptqpe-messages
+module github.com/cliveyg/poptape-messages
 
 go 1.19
 
