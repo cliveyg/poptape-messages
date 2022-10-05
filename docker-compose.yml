@@ -1,4 +1,9 @@
-version: '3'
+version: '3.4'
+
+volumes:
+  poptape_messages:
+    name: poptape_messages
+
 services:
   api:
     build:
@@ -9,21 +14,22 @@ services:
       - "1900:8090"
     restart: always
     depends_on:
-      - mongo_db
+      - mongodb
     networks:
       - net_poptape
-  mongo_db:
-    image: mongo:3.6
+  mongodb:
+    image: mongo
     restart: always
     ports:
       - "1901:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     volumes:
-      - poptape_messages_data:/data/db
+      - poptape_messages:/data/db
     networks:
       - net_poptape
 networks:
   net_poptape:
     external: true
-volumes:
-  poptape_messages_data:
   
