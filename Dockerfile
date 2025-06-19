@@ -1,4 +1,4 @@
-FROM golang:1.19-alpine as build
+FROM golang:1.19-alpine AS build
 
 RUN apk --no-cache add git
 
@@ -14,8 +14,8 @@ RUN go mod init github.com/cliveyg/poptape-messages
 RUN go mod tidy
 RUN go mod download
 
-# need these flags or alpine image won't run due to dynamically linked libs in binary
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -ldflags '-w' -o messages
+# need these flags or alpine image won't run due to dynamically linked libs in binary
+RUN CGO_ENABLED=0 GOOS=$GOOS GOARCH=$GOARCH go build -a -ldflags '-w' -o messages
 
 
 FROM alpine:latest

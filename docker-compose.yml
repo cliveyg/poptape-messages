@@ -1,5 +1,3 @@
-version: '3.4'
-
 volumes:
   poptape_messages:
     name: poptape_messages
@@ -16,7 +14,7 @@ services:
     depends_on:
       - mongodb
     networks:
-      - net_poptape
+      - poptape
   mongodb:
     image: mongo
     restart: always
@@ -28,8 +26,8 @@ services:
     volumes:
       - poptape_messages:/data/db
     networks:
-      - net_poptape
+      - poptape
 networks:
-  net_poptape:
+  poptape:
     external: true
   
